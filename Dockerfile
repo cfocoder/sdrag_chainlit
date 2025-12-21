@@ -12,7 +12,9 @@ COPY pyproject.toml .
 RUN uv pip install --system chainlit httpx pandas plotly python-dotenv
 
 # Copiar aplicación y assets
-COPY app.py chainlit.md .chainlit .
+COPY app.py .
+COPY chainlit.md .
+COPY .chainlit .
 COPY sdrag_logo_no_bg.png .
 
 # Crear directorio public con logos
