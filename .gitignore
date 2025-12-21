@@ -32,7 +32,10 @@ Thumbs.db
 data/
 *.db
 *.sqlite
-public/
+
+# Public (excepto theme.json)
+public/*
+!public/theme.json
 
 #Files 
 Protocolo_MCD_2025_Hector_Sanchez_v4_Chainlit.md
