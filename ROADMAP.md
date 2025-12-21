@@ -3,7 +3,7 @@
 **Proyecto:** Arquitectura RAG Híbrida con Capa Semántica Determinista  
 **Componente:** Frontend Chainlit  
 **Última actualización:** 21 de Diciembre, 2025  
-**Estado general:** 🚧 Fase 1 completada - Iniciando Fase 2
+**Estado general:** ✅ Fase 2 completada - Próxima: Fase 3 (RAG Documental)
 
 ---
 
@@ -57,7 +57,7 @@ Usuario → Chainlit → n8n (router) → Cube Core/OpenSearch → DuckDB → LL
 
 ---
 
-### 🚧 Fase 2: Trazabilidad con `cl.Step` (COMPLETADA)
+### ✅ Fase 2: Trazabilidad con `cl.Step` (COMPLETADA)
 
 **Objetivo:** Implementar visualización de pasos de ejecución para auditoría completa.
 
@@ -244,9 +244,9 @@ CUBE_API_URL=http://100.116.107.52:4000
 
 | Fecha | Versión | Cambios |
 |-------|---------|---------|
-| 2025-01-14 | 0.3.0 | Fase 2 trazabilidad + Reorganizar RAG a Fase 3 |
-| 2025-01-13 | 0.2.0 | Autenticación + Tema azul |
-| 2025-01-13 | 0.1.0 | Chat básico con OpenRouter |
+| 2025-12-21 | 0.3.0 | Fase 2 trazabilidad + Reorganizar RAG a Fase 3 + traducciones es-ES |
+| 2025-12-21 | 0.2.0 | Autenticación + Tema azul |
+| 2025-12-21 | 0.1.0 | Chat básico con OpenRouter |
 
 ---
 
