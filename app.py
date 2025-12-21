@@ -52,19 +52,8 @@ async def call_openrouter(prompt: str) -> str:
 @cl.on_chat_start
 async def start():
     """Inicializa la sesión de chat"""
-    await cl.Message(
-        content=f"""# 🎯 SDRAG Chat Assistant
-
-**Sistema de Chat Inteligente con OpenRouter**
-
-Puedes preguntarme lo que quieras. Estoy aquí para ayudarte.
-
-**Modelo LLM**: {OPENROUTER_MODEL}
-
----
-*Versión: 0.2.0 - Diciembre 2025*
-"""
-    ).send()
+    # No enviamos mensaje aquí, chainlit.md se muestra automáticamente
+    pass
 
 
 @cl.on_message
