@@ -11,8 +11,16 @@ COPY pyproject.toml .
 # Instalar dependencias directamente (sin modo editable)
 RUN uv pip install --system chainlit httpx pandas plotly python-dotenv
 
-# Copiar aplicación
+# Copiar aplicación y assets
 COPY app.py .
+COPY sdrag_logo_no_bg.png .
+COPY .chainlit .
+
+# Crear directorio public con logos
+RUN mkdir -p public && \
+    cp sdrag_logo_no_bg.png public/logo.png && \
+    cp sdrag_logo_no_bg.png public/logo_light.png && \
+    cp sdrag_logo_no_bg.png public/logo_dark.png
 
 # Exponer puerto 8001 (8000 ya ocupado en cfocoder3)
 EXPOSE 8001
