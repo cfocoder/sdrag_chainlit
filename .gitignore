@@ -32,3 +32,4 @@ Thumbs.db
 data/
 *.db
 *.sqlite
+public/
