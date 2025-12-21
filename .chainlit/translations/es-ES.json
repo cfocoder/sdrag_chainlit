@@ -1,0 +1,154 @@
+{
+  "components": {
+    "atoms": {
+      "buttons": {
+        "userButton": {
+          "menu": {
+            "settings": "Configuración",
+            "settingsKey": "S",
+            "APIKeys": "Claves API",
+            "logout": "Cerrar sesión"
+          }
+        }
+      }
+    },
+    "molecules": {
+      "newChatButton": {
+        "newChat": "Nueva conversación"
+      },
+      "tasklist": {
+        "TaskList": {
+          "title": "🗒️ Lista de tareas",
+          "loading": "Cargando...",
+          "error": "Ocurrió un error"
+        }
+      },
+      "attachments": {
+        "cancelUpload": "Cancelar subida",
+        "removeAttachment": "Eliminar adjunto"
+      },
+      "newChatDialog": {
+        "createNewChat": "¿Crear nueva conversación?",
+        "clearChat": "Esto borrará los mensajes actuales e iniciará una nueva conversación.",
+        "cancel": "Cancelar",
+        "confirm": "Confirmar"
+      },
+      "settingsModal": {
+        "settings": "Configuración",
+        "expandMessages": "Expandir mensajes",
+        "hideChainOfThought": "Ocultar cadena de pensamiento",
+        "darkMode": "Modo oscuro"
+      }
+    },
+    "organisms": {
+      "chat": {
+        "history": {
+          "index": {
+            "showHistory": "Mostrar historial",
+            "lastInputs": "Últimas entradas",
+            "noInputs": "Sin entradas...",
+            "loading": "Cargando..."
+          }
+        },
+        "inputBox": {
+          "input": {
+            "placeholder": "Escribe tu mensaje aquí..."
+          },
+          "speechButton": {
+            "start": "Iniciar grabación",
+            "stop": "Detener grabación"
+          },
+          "SubmitButton": {
+            "sendMessage": "Enviar mensaje",
+            "stopTask": "Detener tarea"
+          },
+          "UploadButton": {
+            "attachFiles": "Adjuntar archivos"
+          },
+          "waterMark": {
+            "text": "Creado con"
+          }
+        },
+        "Messages": {
+          "index": {
+            "running": "Ejecutando",
+            "executedSuccessfully": "ejecutado correctamente",
+            "failed": "falló",
+            "feedbackUpdated": "Retroalimentación actualizada",
+            "updating": "Actualizando"
+          }
+        },
+        "dropScreen": {
+          "dropYourFilesHere": "Suelta tus archivos aquí"
+        },
+        "index": {
+          "failedToUpload": "Error al subir",
+          "cancelledUploadOf": "Subida cancelada de",
+          "couldNotReachServer": "No se pudo conectar al servidor",
+          "continuingChat": "Continuando conversación anterior"
+        },
+        "settings": {
+          "settingsPanel": "Panel de configuración"
+        },
+        "welcomeScreen": {
+          "chatWithStarters": "Inicia una conversación:"
+        }
+      },
+      "threadHistory": {
+        "sidebar": {
+          "filters": {
+            "FeedbackSelect": {
+              "feedbackAll": "Retroalimentación: Todos",
+              "feedbackPositive": "Retroalimentación: Positiva",
+              "feedbackNegative": "Retroalimentación: Negativa"
+            }
+          },
+          "DeleteThreadButton": {
+            "confirmMessage": "Esto eliminará la conversación y sus mensajes.",
+            "cancel": "Cancelar",
+            "confirm": "Confirmar",
+            "deletingChat": "Eliminando conversación",
+            "chatDeleted": "Conversación eliminada"
+          },
+          "index": {
+            "pastChats": "Conversaciones anteriores"
+          },
+          "ThreadList": {
+            "empty": "Sin conversaciones...",
+            "today": "Hoy",
+            "yesterday": "Ayer",
+            "previous7days": "Últimos 7 días",
+            "previous30days": "Últimos 30 días"
+          },
+          "TriggerButton": {
+            "closeSidebar": "Cerrar panel",
+            "openSidebar": "Abrir panel"
+          }
+        }
+      },
+      "header": {
+        "chat": "Chat",
+        "readme": "Léeme"
+      }
+    }
+  },
+  "hooks": {
+    "useLLMProviders": {
+      "failedToFetchProviders": "Error al obtener proveedores:"
+    }
+  },
+  "pages": {
+    "Design": {},
+    "Env": {
+      "savedSuccessfully": "Guardado correctamente",
+      "requiredApiKeys": "Claves API requeridas",
+      "optional": "Opcional"
+    },
+    "Page": {
+      "notPartOfProject": "No eres parte de este proyecto."
+    },
+    "ResumeButton": {
+      "resumeChat": "Reanudar conversación"
+    }
+  }
+}
