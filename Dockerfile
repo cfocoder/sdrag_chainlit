@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 COPY pyproject.toml .
 
 # Instalar dependencias directamente (sin modo editable)
-RUN uv pip install --system chainlit httpx pandas plotly python-dotenv
+RUN uv pip install --system chainlit httpx pandas plotly python-dotenv tabulate
 
 # Copiar aplicación y assets
 COPY app.py .
