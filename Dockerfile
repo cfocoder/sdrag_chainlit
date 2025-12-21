@@ -5,9 +5,10 @@ WORKDIR /app
 # Instalar curl para healthcheck
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
-# Copiar archivos de proyecto
+# Copiar archivos de proyecto (incluyendo README.md requerido por pyproject.toml)
 COPY pyproject.toml .
 COPY .python-version .
+COPY README.md .
 
 # Instalar dependencias con uv (mucho más rápido que pip)
 RUN uv pip install --system -e .
