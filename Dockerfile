@@ -20,7 +20,8 @@ COPY sdrag_logo_no_bg.png .
 RUN mkdir -p public && \
     cp sdrag_logo_no_bg.png public/logo.png && \
     cp sdrag_logo_no_bg.png public/logo_light.png && \
-    cp sdrag_logo_no_bg.png public/logo_dark.png
+    cp sdrag_logo_no_bg.png public/logo_dark.png && \
+    cp sdrag_logo_no_bg.png public/favicon.png
 
 # Exponer puerto 8001 (8000 ya ocupado en cfocoder3)
 EXPOSE 8001
