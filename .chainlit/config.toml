@@ -1,0 +1,21 @@
+[project]
+enable_telemetry = false
+user_env = []
+session_timeout = 3600
+cache = false
+
+[UI]
+name = "SDRAG - Arquitectura RAG Híbrida"
+description = "Sistema Determinista para Analítica Financiera"
+default_collapse_content = true
+default_expand_messages = false
+hide_cot = false
+show_readme_as_default = true
+
+[UI.theme]
+primary_color = "#2563eb"
+background_color = "#ffffff"
+paper_background_color = "#f9fafb"
+
+[features]
+prompt_playground = false
