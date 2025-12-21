@@ -11,9 +11,8 @@ COPY pyproject.toml .
 # Instalar dependencias directamente (sin modo editable)
 RUN uv pip install --system chainlit httpx pandas plotly python-dotenv
 
-# Copiar toda la aplicación
+# Copiar aplicación
 COPY app.py .
-COPY .chainlit/ .chainlit/
 
 # Exponer puerto 8001 (8000 ya ocupado en cfocoder3)
 EXPOSE 8001
