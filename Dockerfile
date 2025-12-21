@@ -16,12 +16,12 @@ RUN uv pip install --system -e .
 COPY app.py .
 COPY .chainlit/ .chainlit/
 
-# Exponer puerto
-EXPOSE 8000
+# Exponer puerto 8001 (8000 ya ocupado en cfocoder3)
+EXPOSE 8001
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+    CMD curl -f http://localhost:8001/health || exit 1
 
-# Ejecutar Chainlit
-CMD ["chainlit", "run", "app.py", "--host", "0.0.0.0", "--port", "8000", "--headless"]
+# Ejecutar Chainlit en puerto 8001
+CMD ["chainlit", "run", "app.py", "--host", "0.0.0.0", "--port", "8001", "--headless"]

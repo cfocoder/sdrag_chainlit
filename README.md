@@ -24,7 +24,7 @@ pip install -r requirements.txt
 chainlit run app.py
 ```
 
-Abre: http://localhost:8000
+Abre: http://localhost:8001
 
 ### Coolify (producción)
 
