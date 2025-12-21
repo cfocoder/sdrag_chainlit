@@ -15,6 +15,7 @@ RUN uv pip install --system chainlit httpx pandas plotly python-dotenv
 COPY app.py .
 COPY chainlit.md .
 COPY sdrag_logo_no_bg.png .
+COPY .chainlit/ .chainlit/
 
 # Crear directorio public con logos
 RUN mkdir -p public && \

@@ -5,7 +5,6 @@ Maestría en Ciencia de los Datos - Universidad de Guadalajara
 """
 
 import chainlit as cl
-from datetime import datetime
 import os
 import httpx
 
@@ -13,6 +12,22 @@ import httpx
 N8N_WEBHOOK_URL = os.getenv("N8N_WEBHOOK_URL", "http://100.105.68.15:5678/webhook/sdrag-query")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "mistralai/devstral-2512:free")
+
+# Usuarios autorizados (en producción usar base de datos o vault)
+AUTHORIZED_USERS = {
+    os.getenv("CHAINLIT_USER", "hector"): os.getenv("CHAINLIT_PASSWORD", "sdrag2025")
+}
+
+
+@cl.password_auth_callback
+def auth_callback(username: str, password: str):
+    """Valida credenciales de usuario"""
+    if username in AUTHORIZED_USERS and AUTHORIZED_USERS[username] == password:
+        return cl.User(
+            identifier=username,
+            metadata={"role": "admin", "provider": "credentials"}
+        )
+    return None
 
 async def call_openrouter(prompt: str) -> str:
     """Llama a OpenRouter API para generar explicaciones"""
@@ -51,9 +66,14 @@ async def call_openrouter(prompt: str) -> str:
 
 @cl.on_chat_start
 async def start():
-    """Inicializa la sesión de chat"""
-    # No enviamos mensaje aquí, chainlit.md se muestra automáticamente
-    pass
+    """Inicializa la sesión de chat con bienvenida personalizada"""
+    user = cl.user_session.get("user")
+    if user:
+        await cl.Message(
+            content=f"👋 ¡Hola **{user.identifier}**! Bienvenido a SDRAG Chat.\n\n"
+                    f"Puedes preguntarme lo que quieras. Estoy aquí para ayudarte.\n\n"
+                    f"*Modelo: {OPENROUTER_MODEL}*"
+        ).send()
 
 
 @cl.on_message

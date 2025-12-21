@@ -1,0 +1,19 @@
+[project]
+# Mostrar el README como mensaje de bienvenida
+enable_telemetry = false
+
+[features]
+# Habilitar la pantalla de login
+prompt_playground = false
+
+[UI]
+# Nombre mostrado en la UI
+name = "SDRAG Chat"
+description = "Sistema de Chat Inteligente - Arquitectura RAG Híbrida"
+# Ocultar el logo de Chainlit
+hide_cot = false
+# Tema por defecto
+default_theme = "dark"
+
+[meta]
+generated_by = "SDRAG Chainlit Frontend"

@@ -33,3 +33,7 @@ data/
 *.db
 *.sqlite
 public/
+
+#Files 
+Protocolo_MCD_2025_Hector_Sanchez_v4_Chainlit.md
+copilot-instructions.md
