@@ -17,12 +17,14 @@ COPY chainlit.md .
 COPY sdrag_logo_no_bg.png .
 COPY .chainlit/ .chainlit/
 
-# Crear directorio public con logos
+# Crear directorio public con logos y tema
 RUN mkdir -p public && \
     cp sdrag_logo_no_bg.png public/logo.png && \
     cp sdrag_logo_no_bg.png public/logo_light.png && \
     cp sdrag_logo_no_bg.png public/logo_dark.png && \
     cp sdrag_logo_no_bg.png public/favicon.png
+
+COPY public/theme.json public/theme.json
 
 # Exponer puerto 8001 (8000 ya ocupado en cfocoder3)
 EXPOSE 8001
