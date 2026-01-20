@@ -121,7 +121,7 @@ def classify_query(query: str) -> dict:
         route_target = "Cube Core"
     else:
         route = "documental"
-        route_target = "OpenSearch"
+        route_target = "Weaviate"
     
     return {
         "route": route,
