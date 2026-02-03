@@ -1,18 +1,19 @@
 # Información de Computadoras Tailscale
 
-**Última actualización:** 20 de diciembre de 2025
+**Última actualización:** 2 de febrero de 2026
 
 ## Red Tailscale
 
 | Máquina | IP Tailscale | Estado | Usuario | SO |
 |---------|--------------|--------|---------|-----|
-| vostro | 100.116.107.52 | ✅ Activa (Local) | cfocoder@ | Linux |
-| cfocoder3 | 100.105.68.15 | ✅ Activa | cfocoder@ | Linux |
-| macmini | 100.110.109.43 | ✅ Activa | cfocoder@ | Linux |
-| inspiron13windows | 100.65.52.49 | ⚠️ Offline (21h) | cfocoder@ | Windows |
-| inspiron13wsl | 100.120.133.19 | ⚠️ Offline (1d) | cfocoder@ | Linux (WSL2) |
-| inspiron15 | 100.97.3.35 | ✅ Activa | cfocoder@ | Windows |
-| inspiron15wsl | 100.96.32.5 | ⚠️ Offline (15h) | cfocoder@ | Linux (WSL2) |
+| vostro | 100.124.132.85 | ✅ Activa | cfocoder@ | Linux |
+| cfocoder3 | 100.99.153.39 | ✅ Activa (idle) | cfocoder@ | Linux |
+| macmini | 100.110.109.43 | ✅ Activa (idle) | cfocoder@ | Linux |
+| inspiron13windows | 100.65.52.49 | ❌ Offline (38d) | cfocoder@ | Windows |
+| inspiron13wsl | 100.120.133.19 | ❌ Offline (39d) | cfocoder@ | Linux (WSL2) |
+| inspiron15 | 100.97.3.35 | ❌ Offline (37d) | cfocoder@ | Windows |
+| inspiron15wsl | 100.96.32.5 | ❌ Offline (38d) | cfocoder@ | Linux (WSL2) |
+| iphone-11 | 100.93.125.1 | ❌ Offline (1m) | cfocoder@ | iOS |
 
 ---
 
@@ -304,14 +305,6 @@
   - `/dev/sda1` - 1 GB (EFI Boot) - montado en `/boot/efi`
   - `/dev/sda2` - 446.1 GB (Sistema) - montado en `/`
 
-#### Disco Secundario - HDD 🔄
-- **Dispositivo:** /dev/sdc (931.5 GB total)
-- **Tipo:** **HDD** (ROTA=1 - disco rotacional)
-- **Modelo:** TOSHIBA MQ01ABD100 (1TB, 2.5")
-- **Particiones:**
-  - `/dev/sdc1` - 200 MB
-  - `/dev/sdc2` - 931.3 GB
-
 #### Uso de Disco
 - **Filesystem raíz:** /dev/sda2
 - **Tamaño:** 439 GB
@@ -333,10 +326,9 @@
 - ⚠️ **Reinicio del sistema requerido**
 
 ### Notas Especiales
-- 💻 Hardware: **Mac mini (modelo 2012, 6,1)**
-- 🔌 Disco secundario de 931.5 GB disponible
-- ⏱️ Sistema estable (8+ días de uptime)
-- 🏠 Conexión local directa (192.168.1.23)
+- 💻 **Hardware: Mac mini (modelo 2012, 6,1)**
+- ⏱️ **Sistema estable** (8+ días de uptime)
+- 🏠 **Conexión local directa** (192.168.1.23)
 
 ---
 
@@ -573,7 +565,7 @@
 Todas las máquinas están configuradas con autenticación SSH sin contraseña via Tailscale. Simplemente usa el nombre corto:
 
 \`\`\`bash
-# Acceso directo a cualquier máquina
+# Acceso directo a cualquier máquina (si está activa)
 ssh vostro
 ssh cfocoder3
 ssh macmini
@@ -586,9 +578,9 @@ ssh inspiron15
 Si prefieres usar IPs o necesitas especificar usuario:
 
 \`\`\`bash
-ssh cfocoder@100.116.107.52    # vostro
-ssh ubuntu@100.105.68.15       # cfocoder3
-ssh hector@100.110.109.43      # macmini
+ssh cfocoder@100.124.132.85    # vostro
+ssh cfocoder@100.99.153.39     # cfocoder3
+ssh cfocoder@100.110.109.43    # macmini
 ssh hecto@100.65.52.49         # inspiron13
 ssh hecto@100.97.3.35          # inspiron15
 \`\`\`
@@ -708,11 +700,9 @@ ollama_cluster = {
 - **Más espacio libre:** vostro (445 GB libres)
 - **Discos más rápidos:** inspiron13 e inspiron15 (ambos con NVMe PCIe)
 - **Discos SSD:** vostro, macmini, inspiron13, inspiron15 (todos con SSD/NVMe)
-- **Disco HDD tradicional:** macmini tiene un HDD Toshiba 1TB adicional
 - **Cloud Storage:** cfocoder3 usa Block Volumes de Oracle (NVMe backend)
 - **Disco adicional:** 
   - cfocoder3: 151 GB Block Volume montado en `/mnt/myvolume`
-  - macmini: 931 GB HDD Toshiba sin montar
   - inspiron13: 1TB VHDX para WSL (muy poco usado)
   - inspiron15: **1TB USB externo Toshiba** (almacenamiento móvil)
 
@@ -753,7 +743,7 @@ ollama_cluster = {
 - **vostro:** ⭐ **Worker PRINCIPAL para Docling/Dask** - 32GB RAM, desarrollo Linux nativo, máximo almacenamiento
 - **cfocoder3:** Servicios cloud 24/7, arquitectura ARM, alta disponibilidad
 - **inspiron13:** Desarrollo Windows/Linux híbrido, Docker, máximo rendimiento CPU/GPU, ultraportátil
-- **macmini:** Servidor local estable, almacenamiento masivo (1TB HDD adicional), bajo consumo
+- **macmini:** Servidor local estable, bajo consumo
 
 #### ⚠️ Limitaciones
 - **inspiron13:** RAM soldada (8GB no ampliable), almacenamiento limitado (256GB)
