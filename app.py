@@ -13,8 +13,9 @@ import pandas as pd
 
 # Configuración
 N8N_WEBHOOK_URL = os.getenv("N8N_WEBHOOK_URL", "http://100.105.68.15:5678/webhook/sdrag-query")
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
-OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "mistralai/devstral-2512:free")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "e6368ea404601fb6ebbb3f6c8d074e7081b8efacac4d9694")
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "gemini-flash")
+API_BASE_URL = os.getenv("API_BASE_URL", "http://100.110.109.43:18789/v1")
 
 # Usuarios autorizados
 AUTHORIZED_USERS = {
@@ -187,11 +188,11 @@ async def call_openrouter(prompt: str) -> str:
     async with httpx.AsyncClient(timeout=30.0) as client:
         try:
             response = await client.post(
-                "https://openrouter.ai/api/v1/chat/completions",
+                f"{API_BASE_URL}/chat/completions",
                 headers={
                     "Authorization": f"Bearer {OPENROUTER_API_KEY}",
                     "HTTP-Referer": "https://chainlit.sdrag.com",
-                    "X-Title": "SDRAG Chainlit Frontend",
+                    "X-Title": "SDRAG Chainlit Frontend (Powered by Frankie)",
                 },
                 json={
                     "model": OPENROUTER_MODEL,
